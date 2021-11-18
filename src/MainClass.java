@@ -3,8 +3,8 @@ package loop;
 public class MainClass {
 
 	public static void main(String[] args) {
-		//반복문(for),조건문(if,elseif)사용
 		// 목표 : 도끼 찍기로 어떤 나무 인지 찾기?
+		// 반복문(for),조건문(if,elseif)으로 코드 구성
 		// 각각의 나무의 특성은 도끼질을 버티는 횟수로 결정
 		// aTree 나무는 7회
 		// bTree 나무는 2회
