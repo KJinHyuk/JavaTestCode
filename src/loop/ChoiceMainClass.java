@@ -8,7 +8,7 @@ public class ChoiceMainClass {
 
 	public static void main(String[] args) {
 		System.out.println("오늘은 또 뭐 먹지?");
-		String a = "0";
+		String a = "0";			//루프 탈출 값
 		int b = 0;
 		ArrayList<String> meal = new ArrayList<String>();
 		meal.add("아침");

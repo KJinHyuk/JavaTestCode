@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package loop;
+=======
+
+>>>>>>> refs/remotes/origin/master
 import java.util.Scanner;			//main 에서 sc9를 사용 하기 위한 import 
 import java.util.Random;			//main 에서 rand를 사용 하기 위한 import
 

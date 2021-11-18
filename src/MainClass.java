@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+package loop;
+>>>>>>> refs/remotes/origin/master
 
 public class MainClass {
 
