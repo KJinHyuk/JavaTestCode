@@ -10,7 +10,7 @@ public class MainClass {
 		// cTree 나무는 1회
 		// dTree 나무는 9회
 		// eTree 나무는 5회
- 
+
 		// 각각 나무의 문자열(나무명) 선언
 		String aNum = "aTree";
 		String bNum = "bTree";
