@@ -1,40 +1,217 @@
-import java.util.Scanner;			//main ¿¡¼­ sc9¸¦ »ç¿ë ÇÏ±â À§ÇÑ import 
-import java.util.Random;			//main ¿¡¼­ rand¸¦ »ç¿ë ÇÏ±â À§ÇÑ import
+package loop;
 
 public class MainClass {
-	public static void main(String[] args) {
-		// ³ª¹«¸¦ µµ³¢·Î ¾²·¯ ¶ß·Á º¸ÀÚ
-		// ¾²·¯¶ß¸± ³ª¹«ÀÇ °¹¼ö(ÃÖ´ë 10°³)¸¦ ÀÔ·Â ¹Ş°í
-		// ³ª¹« ³»±¸µµ(ÃÖ´ë 10) ¸¸Å­ µµ³¢Áú·Î ³ª¹«¸¦ ¾²·¯¶ß¸®ÀÚ
 
-		// ³ª¹«µéÀÇ ³»±¸µµ¸¦ ·£´ı ¼öÄ¡·Î ¹Ş±â À§ÇÑ ¹è¿­ ¼±¾ğ
-		int[] StTree = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; 
-		// InTree = ÃÑ ³ª¹« ±×·ç ¼ö
-		int InTree;
-		System.out.print("¿øÇÏ´Â ³ª¹« °¹¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä(ÃÖ´ë 10±×·ç) : ");
-		Scanner sc = new Scanner(System.in); 	// ÀÔ·Â°ªÀ» ÀúÀå
-		InTree = sc.nextInt(); 					// ÀÔ·Â°ªÀ» º¯¼ö¿¡ ÀúÀå
-		Random rand = new Random();
-		for (int i = 0; i < InTree; i++) {
-			int iValue = rand.nextInt(10) + 1; 	// 1 ~ 10 »çÀÌÀÇ °ªÀ» ÀÓÀÇ¼ö¸¦ ³ª¹« ³»±¸µµ·Î ÀúÀå
-			StTree[i] = iValue; 			    // ¼ø¼­´ë·Î ÀÓÀÇ¼ö¸¦ ¹è¿­¿¡ ÀúÀå
-			int b = 0;
-			while (b < StTree[i]) {
-				System.out.println((i + 1) + " ¹øÂ° ³ª¹«¸¦ µµ³¢·Î " + (b + 1) + "È¸ Âï¾ú´Ù");
-				if (b == iValue) {
-					System.out.println("³ª¹«°¡ ³Ñ¾î°£´Ù");
-					InTree = InTree - 1; 	// ³ª¹«°¡ ³Ñ¾îÁ³À¸´Ï ÃÑ ±×·ç¼ö¿¡¼­ 1 °¨¼Ò
-					break; 			// ³ª¹«°¡ ³Ñ¾îÁ³À¸´Ï ´ÙÀ½ ³ª¹«°¡±â À§ÇÑ break
-				} else {
-					System.out.println("³ª¹«°¡ ³Ñ¾î°¡Áö ¾Ê´Â´Ù");
-					b++; 			// Âï´Â È½¼ö Áõ°¡
+	public static void main(String[] args) {
+		//ë°˜ë³µë¬¸(for),ì¡°ê±´ë¬¸(if,elseif)ì‚¬ìš©
+		// ëª©í‘œ : ë„ë¼ ì°ê¸°ë¡œ ì–´ë–¤ ë‚˜ë¬´ ì¸ì§€ ì°¾ê¸°?
+		// ê°ê°ì˜ ë‚˜ë¬´ì˜ íŠ¹ì„±ì€ ë„ë¼ì§ˆì„ ë²„í‹°ëŠ” íšŸìˆ˜ë¡œ ê²°ì •
+		// aTree ë‚˜ë¬´ëŠ” 7íšŒ
+		// bTree ë‚˜ë¬´ëŠ” 2íšŒ
+		// cTree ë‚˜ë¬´ëŠ” 1íšŒ
+		// dTree ë‚˜ë¬´ëŠ” 9íšŒ
+		// eTree ë‚˜ë¬´ëŠ” 5íšŒ
+
+		// ê°ê° ë‚˜ë¬´ì˜ ë¬¸ìì—´(ë‚˜ë¬´ëª…) ì„ ì–¸
+		String aNum = "aTree";
+		String bNum = "bTree";
+		String cNum = "cTree";
+		String dNum = "dTree";
+		String eNum = "eTree";
+
+		// 5ê·¸ë£¨ì˜ ë‚˜ë¬´ê°€ ê°ê° ì„œìˆëŠ” ìë¦¬ ì •ì˜
+		String SoketOne = "";
+		String SoketTwo = "";
+		String SoketThree = "";
+		String SoketFour = "";
+		String SoketFive = "";
+
+		int tree = 5; // ë‚˜ë¬´ì˜ ì´ ê·¸ë£¨ ìˆ˜
+		int aNTree = 3; // aTreeì˜ ë‚´êµ¬ë„
+		int bNTree = 2; // bTreeì˜ ë‚´êµ¬ë„
+		int cNTree = 1; // cTreeì˜ ë‚´êµ¬ë„
+		int dNTree = 4; // dTreeì˜ ë‚´êµ¬ë„
+		int eNTree = 5; // eTreeì˜ ë‚´êµ¬ë„
+
+		// ë„ë¼ë¡œ ì°ì–´ ë³´ì
+		// ë‚˜ë¬´ê°€ ë„˜ì–´ì§ˆ ë•Œê¹Œì§€ ë„ë¼ì§ˆì„ í•˜ê³  ë„˜ì–´ì§€ë©´ ì •ì§€
+
+		// ì²«ë²ˆì§¸ ì¹¸(SoketOne)ìë¦¬ ë‚˜ë¬´
+		for (int i = 1; i < 6; i++) {
+			System.out.println("ì˜ë¬¸ì˜ ë‚˜ë¬´ë¥¼ ë„ë¼ë¡œ " + i + "íšŒ ì°ì—ˆë‹¤");
+			int AbTree = cNTree; // AbTree = ë„ë¼ì§ˆ íšŸìˆ˜ì™€ ë‚˜ë¬´ì˜ ë‚´êµ¬ë„ë¥¼ ë¹„êµí•˜ê¸° ìœ„í•´ forë¬¸ ë‚´ë¶€ì„ ì–¸
+			if (i == AbTree) {
+				System.out.println("ë‚˜ë¬´ê°€ ë„˜ì–´ê°„ë‹¤");
+
+				// ë„˜ì–´ì§„ ë‚˜ë¬´ì˜ ë‚´êµ¬ë„ë¡œ ë‚˜ë¬´ ì´ë¦„ì„ ì°¾ê¸°ìœ„í•œ ì¡°ê±´ë¬¸
+				if (AbTree == 1) {
+					SoketOne = cNum;
+				} // if
+				else if (AbTree == 2) {
+					SoketOne = bNum;
+				} // elseif
+				else if (AbTree == 3) {
+					SoketOne = aNum;
+				} // elseif
+				else if (AbTree == 4) {
+					SoketOne = dNum;
+				} // elseif
+				else {
+					SoketOne = eNum;
 				} // else
-			} // while
+				tree = tree - 1; // ë‚˜ë¬´ê°€ ë„˜ì–´ì¡Œìœ¼ë‹ˆ ì´ ê·¸ë£¨ìˆ˜ì—ì„œ 1 ê°ì†Œ
+				i = 6; // ë‚˜ë¬´ê°€ ë„˜ì–´ì¡Œìœ¼ë‹ˆ ë”ëŠ” ë„ë¼ì§ˆ í•  ì´ìœ ê°€ ì—†ì–´ì„œ forë¬¸ì—ì„œ exit
+			} // if
+			else {
+				System.out.println("ë‚˜ë¬´ê°€ ë„˜ì–´ê°€ì§€ ì•ŠëŠ”ë‹¤");
+			} // else
 		} // for
-		
-		// ÃÑ ³ª¹« ¼ıÀÚ¿Í °¢°¢ ³ª¹«ÀÇ ³»±¸µµ È®ÀÎ
-		for (int n = 0; n < InTree; n++) {	
-			System.out.println("ÃÑ " + InTree + "±×·ç Áß¿¡ " + (n + 1) + "¹øÂ° ³ª¹« ³»±¸µµ´Â " + StTree[n] + " ÀÔ´Ï´Ù.");
-		}// for
-	}// main
-}// class
+		System.out.print("ë„˜ì–´ê°„ ë‚˜ë¬´ëŠ”?");
+		System.out.println(" " + SoketOne);
+		System.out.print("ë‚¨ì•„ìˆëŠ” ë‚˜ë¬´ì˜ ìˆ˜ëŠ”? ");
+		System.out.println(tree);
+		System.out.println(" ");
+
+		// ë‘ë²ˆì§¸ ì¹¸(SoketTwo)ìë¦¬ ë‚˜ë¬´ (ì´í›„ì—ëŠ” Ctrl+ C + V)
+		for (int i = 1; i < 6; i++) {
+			System.out.println("ì˜ë¬¸ì˜ ë‚˜ë¬´ë¥¼ ë„ë¼ë¡œ " + i + "íšŒ ì°ì—ˆë‹¤");
+			int AbTree = bNTree;
+			if (i == AbTree) {
+				System.out.println("ë‚˜ë¬´ê°€ ë„˜ì–´ê°„ë‹¤");
+				if (AbTree == 1) {
+					SoketTwo = cNum;
+				} // if
+				else if (AbTree == 2) {
+					SoketTwo = bNum;
+				} // elseif
+				else if (AbTree == 3) {
+					SoketTwo = aNum;
+				} // elseif
+				else if (AbTree == 4) {
+					SoketTwo = dNum;
+				} // elseif
+				else {
+					SoketTwo = eNum;
+				} // else
+				tree = tree - 1;
+				i = 6;
+			} // if
+			else {
+				System.out.println("ë‚˜ë¬´ê°€ ë„˜ì–´ê°€ì§€ ì•ŠëŠ”ë‹¤");
+			} // else
+		} // for
+		System.out.print("ë„˜ì–´ê°„ ë‚˜ë¬´ëŠ”?");
+		System.out.println(" " + SoketTwo);
+		System.out.print("ë‚¨ì•„ìˆëŠ” ë‚˜ë¬´ëŠ”? ");
+		System.out.println(tree);
+		System.out.println(" ");
+
+		// ì„¸ë²ˆì§¸ ì¹¸(SoketThree)ìë¦¬ ë‚˜ë¬´
+		for (int i = 1; i < 6; i++) {
+			System.out.println("ì˜ë¬¸ì˜ ë‚˜ë¬´ë¥¼ ë„ë¼ë¡œ " + i + "íšŒ ì°ì—ˆë‹¤");
+			int AbTree = dNTree;
+			if (i == AbTree) {
+				System.out.println("ë‚˜ë¬´ê°€ ë„˜ì–´ê°„ë‹¤");
+
+				if (AbTree == 1) {
+					SoketThree = cNum;
+				} // if
+				else if (AbTree == 2) {
+					SoketThree = bNum;
+				} // elseif
+				else if (AbTree == 3) {
+					SoketThree = aNum;
+				} // elseif
+				else if (AbTree == 4) {
+					SoketThree = dNum;
+				} // elseif
+				else {
+					SoketThree = eNum;
+				} // else
+				tree = tree - 1;
+				i = 6;
+			} // if
+			else {
+				System.out.println("ë‚˜ë¬´ê°€ ë„˜ì–´ê°€ì§€ ì•ŠëŠ”ë‹¤");
+			} // else
+		} // for
+		System.out.print("ë„˜ì–´ê°„ ë‚˜ë¬´ëŠ”?");
+		System.out.println(" " + SoketThree);
+		System.out.print("ë‚¨ì•„ìˆëŠ” ë‚˜ë¬´ëŠ”? ");
+		System.out.println(tree);
+		System.out.println(" ");
+
+		// ë„¤ë²ˆì§¸ ì¹¸(SoketFour)ìë¦¬ ë‚˜ë¬´
+		for (int i = 1; i < 6; i++) {
+			System.out.println("ì˜ë¬¸ì˜ ë‚˜ë¬´ë¥¼ ë„ë¼ë¡œ " + i + "íšŒ ì°ì—ˆë‹¤");
+			int AbTree = eNTree;
+			if (i == AbTree) {
+				System.out.println("ë‚˜ë¬´ê°€ ë„˜ì–´ê°„ë‹¤");
+
+				if (AbTree == 1) {
+					SoketFour = cNum;
+				} // if
+				else if (AbTree == 2) {
+					SoketFour = bNum;
+				} // elseif
+				else if (AbTree == 3) {
+					SoketFour = aNum;
+				} // elseif
+				else if (AbTree == 4) {
+					SoketFour = dNum;
+				} // elseif
+				else {
+					SoketFour = eNum;
+				} // else
+				tree = tree - 1;
+				i = 6;
+			} // if
+			else {
+				System.out.println("ë‚˜ë¬´ê°€ ë„˜ì–´ê°€ì§€ ì•ŠëŠ”ë‹¤");
+			} // else
+		} // for
+		System.out.print("ë„˜ì–´ê°„ ë‚˜ë¬´ëŠ”?");
+		System.out.println(" " + SoketFour);
+		System.out.print("ë‚¨ì•„ìˆëŠ” ë‚˜ë¬´ëŠ”? ");
+		System.out.println(tree);
+		System.out.println(" ");
+
+		// ë‹¤ì„¯ë²ˆì§¸ ì¹¸(Soketfive)ìë¦¬ ë‚˜ë¬´
+		for (int i = 1; i < 6; i++) {
+			System.out.println("ì˜ë¬¸ì˜ ë‚˜ë¬´ë¥¼ ë„ë¼ë¡œ " + i + "íšŒ ì°ì—ˆë‹¤");
+			int AbTree = aNTree;
+			if (i == AbTree) {
+				System.out.println("ë‚˜ë¬´ê°€ ë„˜ì–´ê°„ë‹¤");
+
+				if (AbTree == 1) {
+					SoketFive = cNum;
+				} // if
+				else if (AbTree == 2) {
+					SoketFive = bNum;
+				} // elseif
+				else if (AbTree == 3) {
+					SoketFive = aNum;
+				} // elseif
+				else if (AbTree == 4) {
+					SoketFive = dNum;
+				} // elseif
+				else {
+					SoketFive = eNum;
+				} // else
+				tree = tree - 1;
+				i = 6;
+			} // if
+			else {
+				System.out.println("ë‚˜ë¬´ê°€ ë„˜ì–´ê°€ì§€ ì•ŠëŠ”ë‹¤");
+			} // else
+		} // for
+		System.out.print("ë„˜ì–´ê°„ ë‚˜ë¬´ëŠ”?");
+		System.out.println(" " + SoketFive);
+		System.out.print("ë‚¨ì•„ìˆëŠ” ë‚˜ë¬´ëŠ”? ");
+		System.out.println(tree);
+		System.out.println(" ");
+		System.out.println("ë‚˜ë¬´ëŠ” " + SoketOne + ", " + SoketTwo + ", " + SoketThree + ", " + SoketFour + ", " + SoketFive
+				+ " ìˆœì„œë¡œ ì„œìˆìŠµë‹ˆë‹¤.");
+
+	} // main
+} // class
