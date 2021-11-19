@@ -27,39 +27,39 @@ public class BrigeMainClass {
 
 		// 사용자 순번까지 컴퓨터들이 게임 진행
 		while (C < Blegth) {
-			if( A == 0) {
+			if (A == 0) {
 				break;
-			}else {
+			} else {
 				int Aa = rand.nextInt(2); // 컴퓨터 오왼 선택
-			if (Aa == 0) {
-				Gamer[B] = "Left";
-			} else {
-				Gamer[B] = "Right";
-			} // else
+				if (Aa == 0) {
+					Gamer[B] = "Left";
+				} else {
+					Gamer[B] = "Right";
+				} // else
 
-			int Bb = rand.nextInt(2); // 다리 오왼 선택
-			if (Bb == 0) {
-				Brige[C] = "Left";
-			} else {
-				Brige[C] = "Right";
-			} // else
+				int Bb = rand.nextInt(2); // 다리 오왼 선택
+				if (Bb == 0) {
+					Brige[C] = "Left";
+				} else {
+					Brige[C] = "Right";
+				} // else
 
-			// 성공 실패 확인
-			if (Gamer[B] == Brige[C]) {
-				System.out.println((B + 1) + "참가자 예측 성공! " + (C + 1) + "번째 에서 한칸 앞으로 전진!");
-				System.out.println("");
-				C++;
-				if (C == Blegth) {
-					break;
-				} // if
-			} else {
-				System.out.println((B + 1) + "참가자 예측 실패! Good bye");
-				System.out.println("");
-				B++;
-				if (B == A) { // 사용자 순서가 오면 while 다음 while로 이동
-					break;
-				} // if
-			}
+				// 성공 실패 확인
+				if (Gamer[B] == Brige[C]) {
+					System.out.println((B + 1) + "참가자 예측 성공! " + (C + 1) + "번째 에서 한칸 앞으로 전진!");
+					System.out.println("");
+					C++;
+					if (C == Blegth) {
+						break;
+					} // if
+				} else {
+					System.out.println((B + 1) + "참가자 예측 실패! Good bye");
+					System.out.println("");
+					B++;
+					if (B == A) { // 사용자 순서가 오면 while 다음 while로 이동
+						break;
+					} // if
+				}
 			} // else
 		} // while
 
@@ -92,47 +92,45 @@ public class BrigeMainClass {
 			} // else
 		} // while
 
-
-
 		// 사용자 이후 순번 컴퓨터들이 게임 진행
 		while (C < Blegth) {
-				if(B == Gamer.length) {
+			if (B == Gamer.length) {
+				break;
+			}
+			System.out.println(A);
+			System.out.println(B);
+			System.out.println(C);
+			System.out.println(Blegth);
+			int Aa = rand.nextInt(2); // 컴퓨터 오왼 선택
+			if (Aa == 0) {
+				Gamer[B] = "Left";
+			} else {
+				Gamer[B] = "Right";
+			} // else
+
+			int Bb = rand.nextInt(2); // 다리 오왼 선택
+			if (Bb == 0) {
+				Brige[C] = "Left";
+			} else {
+				Brige[C] = "Right";
+			} // else
+
+			// 성공 실패 확인
+			if (Gamer[B] == Brige[C]) {
+				System.out.println((B + 1) + "참가자 예측 성공! " + (C + 1) + "번째 에서 한칸 앞으로 전진!");
+				System.out.println("");
+				C++;
+				if (C == Blegth) {
 					break;
 				}
-				System.out.println(A);
-				System.out.println(B);
-				System.out.println(C);
-				System.out.println(Blegth);
-				int Aa = rand.nextInt(2); // 컴퓨터 오왼 선택
-				if (Aa == 0) {
-					Gamer[B] = "Left";
-				} else {
-					Gamer[B] = "Right";
-				} // else
-
-				int Bb = rand.nextInt(2); // 다리 오왼 선택
-				if (Bb == 0) {
-					Brige[C] = "Left";
-				} else {
-					Brige[C] = "Right";
-				} // else
-
-				// 성공 실패 확인
-				if (Gamer[B] == Brige[C]) {
-					System.out.println((B + 1) + "참가자 예측 성공! " + (C + 1) + "번째 에서 한칸 앞으로 전진!");
-					System.out.println("");
-					C++;
-					if (C == Blegth) {
-						break;
-					}
-				} else {
-					System.out.println((B + 1) + "참가자 예측 실패! Good bye");
-					System.out.println("");
-					if (B == A) {
-						break;
-					} // if
-				} // else
-				} // while
+			} else {
+				System.out.println((B + 1) + "참가자 예측 실패! Good bye");
+				System.out.println("");
+				if (B == A) {
+					break;
+				} // if
+			} // else
+		} // while
 
 // 최종적으로 통과한 인원 count
 		if (C == Blegth) {
