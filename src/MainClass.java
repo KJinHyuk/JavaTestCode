@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+package loop;
+>>>>>>> refs/remotes/origin/master
+
+>>>>>>> refs/remotes/origin/master
 public class MainClass {
 
 	public static void main(String[] args) {

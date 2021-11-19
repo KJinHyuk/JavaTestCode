@@ -33,7 +33,11 @@ public class GoMainClass {
 		
 		int[] RTry = { 0, 0, 0, 0, 0 };
 		
+<<<<<<< HEAD
 
+=======
+		int man_num = 0;
+>>>>>>> refs/remotes/origin/master
 		Random rand = new Random();
 		
 		for(int z=0; z<RTry.length; z++) {
