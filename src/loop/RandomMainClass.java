@@ -100,8 +100,8 @@ public class RandomMainClass {
 			if (UserResult == ComResult) {
 				System.out.println("예측 성공! 상대방에게 구슬을 줍니다.");
 				System.out.println("");
-				ComBall = ComBall + c; // 나의 구슬을 컴퓨터 획득
-				UserBall = UserBall - c; // 나의 구슬이 차감
+				ComBall = ComBall + A; // 나의 구슬을 컴퓨터 획득
+				UserBall = UserBall - A; // 나의 구슬이 차감
 			} else {
 				System.out.println("예측 실패! 공수가 교대 됩니다.");
 				System.out.println("");
