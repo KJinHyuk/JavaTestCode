@@ -10,9 +10,8 @@ public class BrigeMainClass {
 		// 생존하며 총 18칸의 다리를 건너면 우승
 		// 참가자가 도중 실패시 다음 참가자가 이어서 진행
 		int B = 0, C = 0, Blegth = 18;
-		Scanner ss = new Scanner(System.in); // 생존자 입력 스캔 선언
-		Scanner sc = new Scanner(System.in); // 좌우 입력 스캔 선언
-
+		Scanner ss = new Scanner(System.in); // scanner 호출
+		
 		System.out.println("이전 라운드의 생존자를 몇명인가요?");
 		int JP = ss.nextInt();
 
@@ -53,9 +52,12 @@ public class BrigeMainClass {
 						break;
 					} // if
 				} else {
-					System.out.println((B + 1) + "참가자 예측 실패! Good bye");
+					System.out.println((B + 1) + "참가자 예측 실패! " + (C + 1) + "번째 에서 Good bye");
+					System.out.println("");
+					System.out.println((B + 2) + "참가자 예측 성공! " + (C + 1) + "번째 에서 한칸 앞으로 전진!");
 					System.out.println("");
 					B++;
+					C++;
 					if (B == A) { // 사용자 순서가 오면 while 다음 while로 이동
 						break;
 					} // if
@@ -67,7 +69,7 @@ public class BrigeMainClass {
 		while (C < Blegth) {
 			System.out.println("당신 순서입니다.");
 			System.out.println("Right or Left?");
-			String RR = sc.nextLine(); // 참가자 오왼 선택
+			String RR = ss.nextLine(); // 참가자 오왼 선택
 			Gamer[B] = RR;
 			int Bb = rand.nextInt(2); // 다리 오왼 선택
 			if (Bb == 0) {
@@ -85,9 +87,12 @@ public class BrigeMainClass {
 					break;
 				} // if
 			} else {
-				System.out.println((B + 1) + "참가자 예측 실패! Good bye");
+				System.out.println((B + 1) + "참가자 예측 실패! " + (C + 1) + "번째 에서 Good bye");
+				System.out.println("");
+				System.out.println((B + 2) + "참가자 예측 성공! " + (C + 1) + "번째 에서 한칸 앞으로 전진!");
 				System.out.println("");
 				B++;
+				C++;
 				break;
 			} // else
 		} // while
@@ -124,15 +129,19 @@ public class BrigeMainClass {
 					break;
 				}
 			} else {
-				System.out.println((B + 1) + "참가자 예측 실패! Good bye");
+				System.out.println((B + 1) + "참가자 예측 실패! " + (C + 1) + "번째 에서 Good bye");
 				System.out.println("");
+				System.out.println((B + 2) + "참가자 예측 성공! " + (C + 1) + "번째 에서 한칸 앞으로 전진!");
+				System.out.println("");
+				C++;
+				B++;
 				if (B == A) {
 					break;
 				} // if
 			} // else
 		} // while
 
-// 최종적으로 통과한 인원 count
+		// 최종적으로 통과한 인원 count
 		if (C == Blegth) {
 			System.out.println("다리 건너기 성공! 라운드 통과를 축하 드려요!");
 			System.out.println("다리 건너기 게임을 종료 합니다.");
